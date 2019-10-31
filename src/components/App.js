@@ -4,7 +4,7 @@ import handleInitialDAta from '../actions/shared'
 import Dashboard from './dashboard'
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.dispatch(handleInitialDAta())
   }
   render() {
@@ -15,5 +15,11 @@ class App extends Component {
     )
   }
 }
+
+// function mapStateToProps({ authedUser }) {
+//   return {
+//     loading: authedUser !== null
+//   }
+// }
 
 export default connect()(App)

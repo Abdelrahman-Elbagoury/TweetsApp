@@ -8,6 +8,8 @@ export default function users(state={}, action) {
                 ...action.users
             }
         default:
-            return state
+            return {
+                ...state
+            }
     }
 }
