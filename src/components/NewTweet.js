@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
-import { _saveTweet } from '../utils/_DATA.js'
+// import { _saveTweet } from '../utils/_DATA.js'
+import { connect } from 'react-redux'
 
-export default class NewTweet extends Component {
+
+class NewTweet extends Component {
     handleNewTweet() {
-        alert('hi')
+        console.log(this.props.authedUser.authedUser)
     }
     render() {
         return (
@@ -18,3 +20,11 @@ export default class NewTweet extends Component {
         )
     }
 }
+
+function mapStateToProps(authedUser) {
+    return {
+        authedUser
+    }
+}
+
+export default connect(mapStateToProps)(NewTweet)
