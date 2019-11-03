@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import handleInitialDAta from '../actions/shared'
+import Tweet from './tweet'
 
 
 class Dashboard extends Component {
-    // componentDidMount() {
-    //     console.log(this.props)
-    // }
+
     render() {
         console.log(this.props)
         return (
             <div>
-                <h2 style={{ textAlign: 'center' }}>timeline</h2>
+                <h2 style={{ textAlign: 'center' }}>Timeline</h2>
                 <ul>
                     {this.props.tweetsIds.map((id) => {
                         return (
                             <li key={id}>
-                                {id}
+                                <Tweet id={id} />
                             </li>
                         )
                     })}
@@ -28,7 +27,7 @@ class Dashboard extends Component {
 
 function mapStateToProps({ tweets }) {
     return {
-        tweetsIds: Object.keys(tweets).sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
+        tweetsIds: Object.keys(tweets).sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
     }
 }
 

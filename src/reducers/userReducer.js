@@ -1,4 +1,4 @@
-import RECEIVE_USERS from '../actions/userAction'
+import {RECEIVE_USERS} from '../actions/userAction'
 
 export default function users(state={}, action) {
     switch(action.type) {

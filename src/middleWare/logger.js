@@ -2,14 +2,14 @@
 
 let logger = store => next => action => {
 
-      console.group(action.type)
-        console.log('action is: ', action)
-        console.log('state is: ', store.getState())
-        const returnValue = next(action)
-      console.groupEnd()
+  console.group(action.type)
+  console.log('action is: ', action)
+  console.log('state is: ', store.getState())
+  const returnValue = next(action)
+  console.groupEnd()
 
-      return returnValue
+  return returnValue
 
-    }
-  
-    export default  logger
+}
+
+export default logger
