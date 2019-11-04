@@ -5,9 +5,7 @@ import Tweet from './tweet'
 
 
 class Dashboard extends Component {
-
     render() {
-        console.log(this.props)
         return (
             <div>
                 <h2 style={{ textAlign: 'center' }}>Timeline</h2>
@@ -27,7 +25,7 @@ class Dashboard extends Component {
 
 function mapStateToProps({ tweets }) {
     return {
-        tweetsIds: Object.keys(tweets).sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
+        tweetsIds: Object.keys(tweets).sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
     }
 }
 
